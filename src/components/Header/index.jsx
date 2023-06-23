@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from "../Button";
+import logo from "../../assets/logo.svg"
 
 import {
     BuscarInputContainer,
@@ -16,7 +17,7 @@ const Header = () => {
     <Wrapper>
         <Container>
             <Row>
-                <img alt="Logo da dio" />
+                <img src={logo} alt="Logo da dio" />
                 <BuscarInputContainer>
                     <Input placeholder='Buscar...' />
                 </BuscarInputContainer>
