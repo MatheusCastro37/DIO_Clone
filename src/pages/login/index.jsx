@@ -1,5 +1,6 @@
 import EmailIcon from '@mui/icons-material/Email';
 import LockIcon from '@mui/icons-material/Lock';
+import { useNavigate } from 'react-router-dom';
 
 import { Button } from "../../components/Button";
 import { Header } from "../../components/Header";
@@ -8,6 +9,12 @@ import { Input } from "../../components/Input";
 import { Column, Container, CriarText, EsqueciText, Row, SubtitleLogin, Title, TitleLogin, Wrapper} from './styles'
 
 const Login = () => {
+    const navigate = useNavigate();
+
+    const handleClickSignIn = () => {
+        navigate('/feed')
+    }
+
     return (<>
         <Header/>
         <Container>
@@ -24,7 +31,7 @@ const Login = () => {
                 <form>
                     <Input placeholder="E-mail" leftIcon={<EmailIcon />}/>
                     <Input placeholder="Senha" type="password" leftIcon={<LockIcon />}/>
-                    <Button title="Entrar" variant="secondary" />
+                    <Button title="Entrar" variant="secondary" onClick={handleClickSignIn} type="button" />
                 </form>
                 <Row>
                     <EsqueciText>Esqueci minha senha</EsqueciText>
