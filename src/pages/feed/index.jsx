@@ -1,7 +1,7 @@
 import { Card } from "../../components/Card";
 import { Header } from "../../components/Header";
 import { UserInfo } from '../../components/UserInfo';
-import { Container, Column, Title, TitleHighlight } from './styles';
+import { Container, Column, TitleHighlight } from './styles';
 
 const Feed = () => {
     return (<>

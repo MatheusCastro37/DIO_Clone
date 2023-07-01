@@ -1,7 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "../../components/Button";
 import { Header } from "../../components/Header";
-import {Container, TextContent, Title, TitleHighlight} from './styles'
+import {Container, TextContent, Title, TitleHighlight} from './styles';
+import fundo from "../../assets/fundo1.png";
 
 const Home = () => {
 
@@ -29,7 +30,7 @@ const Home = () => {
                 <Button title="Começar" variant="secondary" onClick={handleClickSignIn}/>
             </div>
             <div>
-                <img alt="Imagem principal" />
+                <img src={fundo} alt="Imagem principal" />
             </div>
         </Container>
     </>)

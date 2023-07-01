@@ -1,4 +1,5 @@
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import perfil from '../../assets/perfil.jpg';
 
 import {
     CardContainer,
@@ -16,9 +17,9 @@ const Card = () => {
         <ImageBackground />
         <Content>
             <UserInfo>
-                <UserPicture />
+                <UserPicture src={perfil} alt="perfil do usuario" />
                 <div>
-                    <h4>Pablo</h4>
+                    <h4>Matheus</h4>
                     <p>Há 8 minutos</p>
                 </div>
             </UserInfo>
