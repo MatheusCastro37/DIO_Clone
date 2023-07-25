@@ -9,26 +9,31 @@ import { Button } from "../../components/Button";
 import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
 
-import { api } from "../../services/api";
+import { supabase } from "../../services/supabase";
 
 import { Column, Container, CriarText, EsqueciText, Row, SubtitleLogin, Title, TitleLogin, Wrapper} from './styles'
 
 const schema = yup.object({
     email: yup.string().email('email não é valido').required("Campo Obrigatorio"),
-    password: yup.string().min(3).required("Campo Obrigatorio"),
+    password: yup.number().min(3).required("Campo Obrigatorio"),
   }).required();
 
 const Login = () => {
 
-    const { control, handleSubmit, formState: { errors, isValid } } = useForm({
+    const { control, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(schema),
         mode: 'onChange',
     });
 
     const onSubmit = async formData => {
         try{
-            const { data } = await api.get(`users?email=${formData.email}&senha=${formData.password}`)
-            if(data.length === 1){
+            const { data } = await supabase.from("DIO_DB").select("*")
+            const newLogin = data.filter(data => {
+                return data.email === formData.email && data.senha === formData.password
+            })
+            console.log(newLogin)
+            
+            if(newLogin.length === 1){
                 navigate('/feed')
             }else{
                 alert("Email ou Senha invalido")

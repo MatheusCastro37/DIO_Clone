@@ -10,7 +10,7 @@ import { Button } from "../../components/Button";
 import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
 
-import { api } from "../../services/api";
+import { supabse } from "../../services/supabase";
 
 import { Column, Container, CriarText, PoliticsDio, SubtitleLogin, Title, TitleLogin, Wrapper} from './styles'
 
@@ -27,10 +27,11 @@ const Register = () => {
         mode: 'onChange',
     });
 
+    /*
     const onSubmit = async formData => {
         try{
 
-            const teste = await api.get(`http://localhost:8001/users?`)
+            const teste = await api.get(`db.json`)
             console.log(teste.data)
 
             let checkEmail = [];
@@ -42,7 +43,7 @@ const Register = () => {
 
             if(checkEmail.length === 0) {
                 navigate('/feed')
-                api.post('http://localhost:8001/users', {
+                api.post('db.json', {
                     id: ``,
                     name: `${formData.name}`,
                     email: `${formData.email}`,
@@ -55,7 +56,7 @@ const Register = () => {
         }catch{
             alert("houve um erro, tente novamente")
         }
-    };
+    };*/
 
     const navigate = useNavigate();
 
@@ -72,7 +73,7 @@ const Register = () => {
             <Wrapper>
                 <TitleLogin>Comece agora grátis</TitleLogin>
                 <SubtitleLogin>Crie sua conta e make the change._</SubtitleLogin>
-                <form onSubmit={handleSubmit(onSubmit)}>
+                <form onSubmit={handleSubmit(/*onSubmit*/)}>
                     <Input name="name" errorMessage={errors?.name?.message} control={control} placeholder="Nome completo" leftIcon={<PersonIcon />}/>
                     <Input name="email" errorMessage={errors?.email?.message} control={control} placeholder="E-mail" leftIcon={<EmailIcon />}/>
                     <Input name="password" errorMessage={errors?.password?.message} control={control} placeholder="Senha" type="password" leftIcon={<LockIcon />}/>
