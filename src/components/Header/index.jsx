@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { Button } from "../Button";
 import logo from "../../assets/logo.svg";
 import perfil from '../../assets/perfil.jpg';
@@ -9,7 +9,6 @@ import {
     Container,
     Input,
     Menu,
-    MenuRight,
     Row,
     UserPicture,
     Wrapper
@@ -48,7 +47,7 @@ const Header = ({autenticado}) => {
                     <UserPicture src={perfil} />
                 ) : (
                     <>
-                        <MenuRight href="#">Home</MenuRight>
+                        <Link to="/">Home</Link>
                         <Button title="Entrar" onClick={handleClickSignIn} />
                         <Button title="Cadastrar" onClick={handleClickRegister} />
                     </>

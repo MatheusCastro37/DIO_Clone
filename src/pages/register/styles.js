@@ -45,7 +45,7 @@ export const SubtitleLogin = styled.p`
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
-    margin-bottom: 35px;
+    margin-bottom: 25px;
     line-height: 25px;
 `
 
@@ -68,7 +68,14 @@ export const CriarText = styled.p`
     color: #FFFFFF;
     margin-top: 15px;
 
-    strong{
+    a{
         color: #3ad089;
+        text-decoration: none;
     }
+`
+
+export const ImportantText = styled.p`
+    color: #C51605;
+    margin-bottom: 20px;
+    font-family: 'Open Sans';
 `

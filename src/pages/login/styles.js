@@ -26,6 +26,16 @@ export const Row = styled.div`
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
+
+    a{
+        text-decoration: none;
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 19px;
+        color: #E23DD7;
+    }
 `
 
 export const Title = styled.h2`
@@ -64,13 +74,4 @@ export const EsqueciText = styled.p`
     font-size: 14px;
     line-height: 19px;
     color: #E5E044;
-`
-
-export const CriarText = styled.p`
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 19px;
-    color: #E23DD7;
 `

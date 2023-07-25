@@ -1,6 +1,6 @@
 import EmailIcon from '@mui/icons-material/Email';
 import LockIcon from '@mui/icons-material/Lock';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
@@ -11,7 +11,7 @@ import { Input } from "../../components/Input";
 
 import { supabase } from "../../services/supabase";
 
-import { Column, Container, CriarText, EsqueciText, Row, SubtitleLogin, Title, TitleLogin, Wrapper} from './styles'
+import { Column, Container, EsqueciText, Row, SubtitleLogin, Title, TitleLogin, Wrapper} from './styles'
 
 const schema = yup.object({
     email: yup.string().email('email não é valido').required("Campo Obrigatorio"),
@@ -65,7 +65,7 @@ const Login = () => {
                 </form>
                 <Row>
                     <EsqueciText>Esqueci minha senha</EsqueciText>
-                    <CriarText>Criar minha conta</CriarText>
+                    <Link to='/register'>Criar minha conta</Link>
                 </Row>
             </Wrapper>
             </Column>
